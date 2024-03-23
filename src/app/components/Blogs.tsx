@@ -18,6 +18,7 @@ const filteredBlogs = blogs.data.filter((blog: any) => {
       {filteredBlogs?.map((blog: any) => (
         <div className="" key={blog.id}>
           <BlogCard blogDetails ={blog} />
+          
         </div>
       ))}
     </div>
