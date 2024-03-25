@@ -8,14 +8,15 @@ const BlogCard = ({ blogDetails }: any) => {
       ? blogDetails.attributes.Description.substring(0, 80) + "..."
       : blogDetails.attributes.Description;
 
-const imageUrl = "http://127.0.0.1:1337" + blogDetails.attributes.img.data.attributes.url;
+  const imageUrl =
+    "http://127.0.0.1:1337" + blogDetails.attributes.img.data.attributes.url;
 
-console.log(truncateBlogDesc,'data');
+  console.log(truncateBlogDesc, "data");
 
   return (
     <div className=" rounded-lg shadow-md p-4 mb-4 overflow-hidden border border-gray-600 cursor-pointer">
       <Link href={`/blog/${blogDetails.id}`}>
-        <div className=" relative w-full h-1" style={{paddingBottom: "100%"}}>
+        <div className=" relative w-full h-1" style={{ paddingBottom: "100%" }}>
           <Image
             layout="fill"
             objectFit="cover"
@@ -28,7 +29,7 @@ console.log(truncateBlogDesc,'data');
           <h2 className="text-xl font-semibold mb-2 overflow-ellipsis">
             {blogDetails.attributes.Title}
           </h2>
-          <p className="text-gray-600">{ truncateBlogDesc}</p>
+          <p className="text-gray-600">{truncateBlogDesc}</p>
         </div>
       </Link>
     </div>
