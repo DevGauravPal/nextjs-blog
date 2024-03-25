@@ -3,12 +3,14 @@ import Link from "next/link";
 import React from "react";
 
 const BlogCard = ({ blogDetails }: any) => {
-  // const truncateBlogDesc =
-  //   blogDetails.attributes.description.length > 80
-  //     ? blogDetails.attributes.description.substring(0, 80) + "..."
-  //     : blogDetails.attributes.description;
+  const truncateBlogDesc =
+    blogDetails.attributes.Description.length > 80
+      ? blogDetails.attributes.Description.substring(0, 80) + "..."
+      : blogDetails.attributes.Description;
 
 const imageUrl = "http://127.0.0.1:1337" + blogDetails.attributes.img.data.attributes.url;
+
+console.log(truncateBlogDesc,'data');
 
   return (
     <div className=" rounded-lg shadow-md p-4 mb-4 overflow-hidden border border-gray-600 cursor-pointer">
@@ -26,7 +28,7 @@ const imageUrl = "http://127.0.0.1:1337" + blogDetails.attributes.img.data.attri
           <h2 className="text-xl font-semibold mb-2 overflow-ellipsis">
             {blogDetails.attributes.Title}
           </h2>
-          {/* <p className="text-gray-600">{truncateBlogDesc}</p> */}
+          <p className="text-gray-600">{ truncateBlogDesc}</p>
         </div>
       </Link>
     </div>
